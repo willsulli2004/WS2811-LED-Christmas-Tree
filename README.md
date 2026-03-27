@@ -154,35 +154,7 @@ Animations use the `led_coordinates.json` map to drive spatially-aware effects. 
 - **christmas_wave** — red, green, and gold flowing bands
 - **snowfall** — white dots drifting on a dark background
 
----
 
-## Troubleshooting
-
-**"GPIO busy" error on startup**
-Try a different GPIO pin (e.g. GPIO 10 or GPIO 21) and update `board.D18` in the scripts accordingly.
-
-**LEDs not responding or flickering**
-- Verify the external power supply is connected and capable of delivering enough current
-- Check that Pi GND and power supply GND share a common connection
-- Some WS2811 strips require a level shifter for reliable 3.3V → 5V logic translation
-
-**Mapping script finds no bright pixels**
-- Increase ambient darkness — the script works best in a dim room
-- Lower the `THRESHOLD` value in `map_leds.py` (default: 200)
-- Verify the camera URL returns a valid image: `curl http://<CAMERA_IP>:<PORT>/snapshot --output test.jpg`
-
-**Homebridge not reflecting state correctly**
-- Confirm the Flask server is running and accessible from the Homebridge host
-- Test endpoints manually: `curl http://<PI_IP>:5000/status`
-
----
-
-## Notes
-
-- The Pi also runs Pi-hole DNS on the same device. The Flask server on port `5000` does not conflict with Pi-hole services.
-- For a lower-power permanent installation, migrating to a **Raspberry Pi Pico 2** is feasible, though it requires porting from Python/`rpi_ws281x` to MicroPython/`neopixel` and gives up the camera-mapping workflow.
-
----
 
 ## License
 
