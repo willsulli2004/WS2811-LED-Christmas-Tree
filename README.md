@@ -10,7 +10,7 @@ A Raspberry Pi 5 project for driving 150 WS2811 addressable LED pixel lights wit
 - **Coordinate-aware animations** — effects like top-to-bottom wipes and side-to-side sweeps use real spatial data, not just sequential order
 - **Flask HTTP API** — control the lights from any device on your local network
 - **Homebridge integration** — expose the tree as a smart home accessory via `homebridge-http-switch`
-- **Graceful shutdown** — clean LED power-off on `KeyboardInterrupt` or server stop
+- **Graceful shutdown** — clean LED power-off on server stop
 
 ---
 
