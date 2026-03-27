@@ -19,7 +19,7 @@ effect_thread = None
 stop_effect = False
 
 # Path to LED coordinates
-COORDINATES_FILE = '/home/willsully2004/led_coordinates.json'
+COORDINATES_FILE = #path
 
 # Load coordinates at startup
 led_coordinates = {}
@@ -66,7 +66,7 @@ def turn_off_other_switches(except_switch_id):
     for switch_id in switches:
         if switch_id != except_switch_id:
             try:
-                requests.get(f'http://192.168.0.6:51828/?accessoryId={switch_id}&state=false', timeout=1)
+                requests.get(f'http://IP/?accessoryId={switch_id}&state=false', timeout=1)
             except:
                 pass
 
